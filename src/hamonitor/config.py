@@ -19,6 +19,9 @@ else:
     BACKEND = "Telegram"
     BOT_LOG_LEVEL = logging.INFO
 
+if not Path(f"{Path(__file__).parent}/plugins").exists():
+    Path(f"{Path(__file__).parent}/plugins").mkdir()
+
 # Get err-hamonitor plugin
 if not Path(f"{Path(__file__).parent}/plugins/err-hamonitor").exists():
     # TODO: whats about updates?

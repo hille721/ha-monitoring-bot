@@ -1,4 +1,1 @@
--r requirements.txt
-
-pylint
-black
+-r ./requirements-test.txt
