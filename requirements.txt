@@ -1,0 +1,45 @@
+# errbot
+errbot==6.1.*
+
+# errbot dependencies
+ansi==0.2.*
+beautifulsoup4==4.10.*
+cffi==1.15.*
+charset-normalizer==2.0.*
+click==8.0.*
+colorlog==6.6.*
+cryptography==35.0.*
+daemonize==2.5.*
+deepmerge==0.3.*
+dulwich==0.20.*
+Flask==2.0.*
+idna==3.*
+importlib-metadata==4.8.*
+itsdangerous==2.0.*
+Jinja2==3.0.*
+Markdown==3.3.*
+MarkupSafe==2.0.*
+pycparser==2.*
+Pygments==2.10.*
+pyOpenSSL==21.0.*
+requests==2.26.*
+six==1.16.*
+soupsieve==2.3.*
+urllib3==1.26.*
+waitress==2.0.*
+WebOb==1.8.*
+WebTest==3.0.*
+Werkzeug==2.0.*
+zipp==3.6.*
+
+# telegram
+python-telegram-bot==13.8.*
+APScheduler==3.6.*
+cachetools==4.2.*
+tornado==6.*
+tzlocal==4.*
+
+# gitpython
+gitpython==3.1.*
+gitdb==4.0.*
+smmap==5.0.*

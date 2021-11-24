@@ -1,0 +1,31 @@
+{
+    "BOT_ADMINS": [
+        "@CHANGE_ME"
+    ],
+    "BOT_TOKEN": "",
+    "HAMONITOR": {
+        "HOSTS": {
+            "google": {
+                "IP": "142.250.186.110",
+                "APPLICATIONS": {
+                    "google": {
+                        "PORT": 80,
+                        "PATH": ""
+                    },
+                    "gmail": {
+                        "PORT": 80,
+                        "PATH": ""
+                    }
+                }
+            },
+            "notexistent": {
+                "IP": "192.192.192.192",
+                "INTERVAL": 10,
+                "DELAY": 2,
+                "APPLICATIONS": {}
+            }
+        }
+    },
+    "DEFAULT_INTERVAL": 120,
+    "DEFAULT_DELAY": 90
+}
