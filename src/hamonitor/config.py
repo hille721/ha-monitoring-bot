@@ -4,7 +4,7 @@ from pathlib import Path
 import logging
 import tempfile
 
-from git import Repo
+from errbot.utils import git_clone, git_pull
 
 if not os.getenv("BOTCONFIG"):
     raise RuntimeError("BOTCONFIG not defined as environment variable")
@@ -19,21 +19,23 @@ else:
     BACKEND = "Telegram"
     BOT_LOG_LEVEL = logging.INFO
 
-if not Path(f"{Path(__file__).parent}/plugins").exists():
-    Path(f"{Path(__file__).parent}/plugins").mkdir()
-
-# Get err-hamonitor plugin
-if not Path(f"{Path(__file__).parent}/plugins/err-hamonitor").exists():
-    # TODO: whats about updates?
-    Repo.clone_from(
-        "https://github.com/hille721/err-hamonitor.git",
-        f"{Path(__file__).parent}/plugins/err-hamonitor",
-    )
-
 BOT_LOG_FILE = None
 
 BOT_DATA_DIR = tempfile.mkdtemp()
 BOT_EXTRA_PLUGIN_DIR = f"{Path(__file__).parent}/plugins"
+
+# download err-hamonitor plugin
+# if not Path(f"{Path(__file__).parent}/plugins").exists():
+#    Path(f"{Path(__file__).parent}/plugins").mkdir()
+
+# Get err-hamonitor plugin
+if not Path(f"{BOT_EXTRA_PLUGIN_DIR}/err-hamonitor").exists():
+    git_clone(
+        "https://github.com/hille721/err-hamonitor.git",
+        f"{BOT_EXTRA_PLUGIN_DIR}/err-hamonitor",
+    )
+else:
+    git_pull(f"{BOT_EXTRA_PLUGIN_DIR}/err-hamonitor")
 
 STORAGE = "Memory"
 
