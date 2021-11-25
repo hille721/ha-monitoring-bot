@@ -6,15 +6,12 @@ Simple Telegram Bot which monitors your servers (e.g. your Home Assistant server
 Installation
 ------------
 
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install -U pip wheel
-    pip install -r requirements.txt
+    pip install https://github.com/hille721/ha-monitoring-bot
 
 Configuration
 -------------
 
-You can config everything via one json file. Example `example_botconfig.json`:
+You can configure everything via one json file. Example `example_botconfig.json`:
 
     {
         "BOT_ADMINS": [

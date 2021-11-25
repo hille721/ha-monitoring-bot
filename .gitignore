@@ -54,3 +54,6 @@ ownbotconfig.json
 
 # no errbot plugins
 **/plugins/*
+
+# TODO: remove if contrib is finished
+**/contrib/*
