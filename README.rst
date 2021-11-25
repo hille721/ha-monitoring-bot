@@ -1,17 +1,26 @@
+.. image:: https://github.com/hille721/ha-monitoring-bot/actions/workflows/python-test.yml/badge.svg
+    :alt: build
+    :target: https://github.com/hille721/ha-monitoring-bot/actions/workflows/python-test.yml
+
+=================
 ha-monitoring-bot
 =================
 
 Simple Telegram Bot which monitors your servers (e.g. your Home Assistant server) and informs you via Telegram.
 
 Installation
-------------
+============
+
+.. code-block::
 
     pip install https://github.com/hille721/ha-monitoring-bot
 
 Configuration
--------------
+=============
 
 You can configure everything via one json file. Example `example_botconfig.json`:
+
+.. code-block::
 
     {
         "BOT_ADMINS": [
@@ -47,7 +56,9 @@ You can configure everything via one json file. Example `example_botconfig.json`
     }
 
 Start
------
+=====
+
+.. code-block::
 
     export BOTCONFIG=example_botconfig.json
     errbot -c src/hamonitor/config.py
