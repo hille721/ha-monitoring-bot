@@ -29,16 +29,15 @@ You can configure everything via one json file. Example `example_botconfig.json`
                         },
                         "gmail": {
                             "PORT": 80,
-                            "PATH": ""
+                            "PATH": "/gmail"
                         }
                     }
                 },
                 "notexistent": {
                     "IP": "192.192.192.192",
-                    "INTERVAL": 10,
-                    "DELAY": 2,
-                    "APPLICATIONS": {
-                        }
+                    "APPLICATIONS": {}
+                    "INTERVAL": 20,
+                    "DELAY": 5
                     }
                 }
             },

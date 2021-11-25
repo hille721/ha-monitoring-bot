@@ -32,4 +32,4 @@ jobs:
           pip install .
           pip install -r requirements-test.txt
       - name: Running tests
-        run: pytest
+        run: export BOTCONFIG=example_botconfig.json pytest
