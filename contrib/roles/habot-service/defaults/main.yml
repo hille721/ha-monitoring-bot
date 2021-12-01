@@ -1,0 +1,7 @@
+---
+# defaults file for roles/habot-service
+bot_admin: #list
+bot_token: #str
+bot_hosts: #dict
+default_interval: 120
+default_delay: 60

@@ -1,0 +1,16 @@
+[Unit]
+Description=Start Errbot hamonitor chatbot
+After=network.service
+
+[Service]
+Environment="LC_ALL=en_US.UTF-8"
+Environment="PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/hamonitor/.venv/bin"
+Environment="BOTCONFIG=/opt/hamonitor/habotconfig.json"
+ExecStart=/opt/hamonitor/.venv/bin/errbot --config /opt/hamonitor/.venv/lib/python3.9/site-packages/hamonitor/config.py
+WorkingDirectory=/opt/hamonitor
+User=hamonitor
+Restart=always
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

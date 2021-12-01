@@ -13,7 +13,7 @@ Installation
 
 .. code-block::
 
-    pip install https://github.com/hille721/ha-monitoring-bot
+    pip install git+https://github.com/hille721/ha-monitoring-bot.git
 
 Configuration
 =============
@@ -63,4 +63,5 @@ Start
     export BOTCONFIG=example_botconfig.json
     errbot -c src/hamonitor/config.py
 
-It is really recommended to run this inside a container or a service. There are also Ansible roles to deploy the bot (tbd).
+It is really recommended to run this inside a container or a service. There is also an Ansible roles to deploy the bot as a
+`service <https://github.com/hille721/ha-monitoring-bot/contrib/roles>`_.

@@ -1,0 +1,10 @@
+{
+    "BOT_ADMINS": {{ bot_admins | to_nice_json}},
+    "BOT_TOKEN": "{{ bot_token }}",
+    "HAMONITOR": {
+        "HOSTS": {{ bot_hosts | to_nice_json }},
+        "DEFAULT_INTERVAL": {{ default_interval }},
+        "DEFAULT_DELAY": {{ default_delay }}
+    },
+    "BOT_EXTRA_PLUGIN_DIR": "/opt/hamonitor/plugins"
+}

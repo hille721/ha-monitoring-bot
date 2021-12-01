@@ -1,0 +1,7 @@
+---
+# handlers file for roles/habot-service
+- name: restart hamonitor service
+  ansible.builtin.systemd:
+    state: restarted
+    name: hamonitor
+    daemon_reload: yes

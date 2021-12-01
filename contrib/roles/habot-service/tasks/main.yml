@@ -1,0 +1,54 @@
+---
+# tasks file for roles/habot-service
+- name: Ensure group "hamonitor" exists
+  ansible.builtin.group:
+    name: hamonitor
+    state: present
+
+- name: Create User "hamonitor"
+  ansible.builtin.user:
+    name: hamonitor
+    comment: hamonitor chatbot user
+    group: hamonitor
+    home: /opt/hamonitor
+    create_home: yes
+    state: present
+
+- name: Install python3-venv
+  ansible.builtin.package:
+    name:
+      - python3-venv
+      - git
+    state: present
+
+- name: Install ha-monitoring-bot
+  ansible.builtin.pip:
+    name: git+https://github.com/hille721/ha-monitoring-bot.git
+    virtualenv: /opt/hamonitor/.venv
+    virtualenv_command: python3 -m venv
+
+- name: Ensure owner:group
+  ansible.builtin.file:
+    path: /opt/hamonitor/.venv
+    owner: hamonitor
+    group: hamonitor
+    mode: 0755
+    state: directory
+    recurse: yes
+
+- name: create hamonitor service
+  ansible.builtin.copy:
+    src: etc/systemd/system/hamonitor.service
+    dest: /etc/systemd/system/hamonitor.service
+    owner: hamonitor
+    group: hamonitor
+    mode: 0644
+
+- name: create botconfig.json
+  ansible.builtin.template:
+   src: opt/hamonitor/habotconfig.json.j2
+   dest: /opt/hamonitor/habotconfig.json
+   owner: hamonitor
+   group: hamonitor
+   mode: 0750
+  notify: restart hamonitor service
