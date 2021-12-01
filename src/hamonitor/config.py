@@ -22,11 +22,9 @@ else:
 BOT_LOG_FILE = None
 
 BOT_DATA_DIR = tempfile.mkdtemp()
-BOT_EXTRA_PLUGIN_DIR = f"{Path(__file__).parent}/plugins"
-
-# download err-hamonitor plugin
-# if not Path(f"{Path(__file__).parent}/plugins").exists():
-#    Path(f"{Path(__file__).parent}/plugins").mkdir()
+BOT_EXTRA_PLUGIN_DIR = _CONFIG.get(
+    "BOT_EXTRA_PLUGIN_DIR", f"{Path(__file__).parent}/plugins"
+)
 
 # Get err-hamonitor plugin
 if not Path(f"{BOT_EXTRA_PLUGIN_DIR}/err-hamonitor").exists():
